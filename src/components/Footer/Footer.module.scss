@@ -1,0 +1,19 @@
+.footerContainer {
+    width: 100%;
+}
+
+.footerList {
+    display: flex;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    .footerItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}

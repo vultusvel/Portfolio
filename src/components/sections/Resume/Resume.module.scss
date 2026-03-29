@@ -1,0 +1,95 @@
+.resumeContainer{
+
+    .resumeTitle{
+       text-align: center;
+    }
+
+    .resumeExperienceContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .resumeExperience {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+
+        .resumeExperienceInfo{
+            width: 900px;
+            height: 400px;
+            background-color: #fff;
+
+            margin-bottom: 15px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .resumeExperienceInfoTitle {
+                text-align: center;
+            }
+
+        }
+    }
+
+    .resumeLanguages {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+
+        .resumeLanguagesInfo {
+            width: 900px;
+            height: 400px;
+            background-color: #fff;
+
+            margin-bottom: 15px;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+    }
+
+    .resumeSkillset{
+        .resumeSkillsetTitle {
+            text-align: center;
+        }
+    
+
+        .resumeSkillsetInfoList {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .resumeSkillsetInfo{
+                background-color: #fff;
+
+                margin-right: 15px;
+            }
+        }
+    }
+
+    .resumeCertificates{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .resumeCertificatesTitle{
+
+            
+
+        }
+
+    }
+
+}
