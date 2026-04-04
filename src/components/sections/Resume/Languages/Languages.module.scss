@@ -1,0 +1,61 @@
+@import "../../../../app/styles/variables.scss";
+
+.container {
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  .containerTitle {
+    font-size: 42px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background-color: $primary;
+    }
+  }
+
+  .languagesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 600px;
+
+    @media (max-width: $mobile) {
+      gap: 10px;
+    }
+  }
+}
+
+.lang {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 50px; 
+  font-weight: 600;
+  color: #444;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $primary;
+    color: white;
+    box-shadow: 0 8px 20px rgba(34, 89, 242, 0.3);
+    cursor: pointer;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

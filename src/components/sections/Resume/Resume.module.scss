@@ -1,95 +1,47 @@
-.resumeContainer{
+@import "../../../app/styles/variables.scss";
 
-    .resumeTitle{
-       text-align: center;
-    }
+.resumeContainer {
+    background-color: rgb(225, 218, 207);
+    padding-bottom: 100px;
+    overflow: hidden;
 
-    .resumeExperienceContainer{
+    .headerBox {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 90px 0;
     }
 
-    .resumeExperience {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+    .resumeTitle {
+        font-size: 42px;
+        position: relative;
+        display: inline-block;
 
-
-        .resumeExperienceInfo{
-            width: 900px;
-            height: 400px;
-            background-color: #fff;
-
-            margin-bottom: 15px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .resumeExperienceInfoTitle {
-                text-align: center;
-            }
-
-        }
-    }
-
-    .resumeLanguages {
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-
-        .resumeLanguagesInfo {
-            width: 900px;
-            height: 400px;
-            background-color: #fff;
-
-            margin-bottom: 15px;
-
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
+        &::before {
+            content: "";
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: $primary;
         }
 
-    }
+        @media (max-width: $mobile) {
+            font-size: 32px;
 
-    .resumeSkillset{
-        .resumeSkillsetTitle {
-            text-align: center;
-        }
-    
-
-        .resumeSkillsetInfoList {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .resumeSkillsetInfo{
-                background-color: #fff;
-
-                margin-right: 15px;
+            &::before {
+                left: 50%;
+                top: -30px;
+                transform: translateX(-50%);
             }
         }
     }
 
-    .resumeCertificates{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .resumeCertificatesTitle{
-
-            
-
-        }
-
+    .content {
+        max-width: $container-max;
+        margin: 0 auto;
+        padding: 0 20px;
     }
-
 }

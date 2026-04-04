@@ -1,41 +1,104 @@
+@import "../../../app/styles/variables.scss";
+
 .aboutContainer {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
 
-    max-width: 1200px;
-    width: 100%;
-    height: 1000px;
-
+    padding: 100px 20px; 
+    min-height: 100vh;
     margin: 0 auto;
+    overflow: hidden;
+
+    .backgroundGrid {
+        position: absolute;
+        z-index: -1;
+        width: 45%;
+        height: 900px;
+        top: 5%;
+        left: 0;
+        background-color: rgb(194, 172, 143);
+        pointer-events: none;
+        will-change: opacity;
+
+        @media (max-width: $tablet) {
+            width: 100%;
+            height: 40%;
+            top: 0;
+        }
+    }
 
     .aboutContentPhoto {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 20px;
+        background-color: rgb(225, 218, 207);
+
+        width: 100%;
+        max-width: 400px;
+        padding-bottom: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 
         .aboutImage {
-            width: 100%;
-            height: 100%;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
+            border-radius: 50%;
+            margin-top: 40px;
         }
 
-        .aboutText {
-            font-size: 16px;
-            font-weight: 400;
-            color: #000000;
+        .aboutContentPhotoTitle {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+            margin: 40px 0;
+            text-align: center;
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 60px;
+                height: 3px;
+                background-color: $primary; 
+                bottom: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .aboutContentPhotoText {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            padding: 40px 0;
         }
     }
 
     .aboutContent {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        gap: 20px;
+        max-width: 400px;
+        gap: 70px;
+
+        @media (max-width: $tablet) {
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .aboutTitle {
+            font-size: clamp(48px, 8vw, 96px);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .aboutText {
+            line-height: 1.8;
+            color: #555;
+        }
     }
 }
