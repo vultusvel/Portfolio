@@ -1,0 +1,149 @@
+@import "../../../app/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(225, 218, 207);
+  padding: 60px 20px;
+
+  @media (max-width: $tablet) {
+    padding: 40px 15px;
+  }
+}
+
+.mainTitle {
+  font-size: 42px;
+  margin-bottom: 40px;
+  z-index: 10;
+
+  @media (max-width: $mobile) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: $primary;
+  }
+}
+
+
+.contentWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $mobile) {
+    height: auto; 
+    min-height: 400px;
+  }
+}
+
+.svgContainer {
+  position: absolute;
+  z-index: 2;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+
+    path {
+      stroke: rgb(194, 172, 143);
+      stroke-width: 0.3;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    transform: scale(0.8); 
+  }
+}
+
+.formContainer {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  z-index: 1;
+
+  @media (max-width: $mobile) {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); 
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input,
+  textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $primary; 
+    }
+
+    @media (max-width: $mobile) {
+      padding: 12px;
+      font-size: 16px; 
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: none;
+  }
+
+  .submitButton {
+    height: 48px;
+    background: $primary; 
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    font-weight: 500;
+    transition: transform 0.2s;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+  }
+}

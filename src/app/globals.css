@@ -1,12 +1,12 @@
 :root {
   --background: #ffffff;
-  --foreground: #c1c5cc;
+  --foreground: #dbdbca;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #c1c5cc;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #dbdbca;
   }
 }
 
@@ -27,7 +27,7 @@ body {
 
 * {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 0;
   margin: 0;
 }
 

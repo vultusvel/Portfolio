@@ -1,30 +1,80 @@
-import Link from 'next/link';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './Header.module.scss';
 
-export default function Header() {
-    return (
-        <header className={styles.header}>
-            <nav className={styles.headerContainer}>
-                <div className={styles.headerMeInfo}>
-                    <h1 className={styles.headerMeName}>Anahit Gevorgyan</h1>
-                    <h2 className={styles.headerMeTitle}>Software Engineer</h2>
-                </div>
+const sections = [
+  { id: 'about', label: 'About me' },
+  { id: 'resume', label: 'Resume' },
+  { id: 'contacts', label: 'Contacts' },
+];
 
-                <ul className={styles.headerList}>
-                    <li className={styles.headerItem}>
-                        <Link href="/contact">About me</Link>
-                    </li>
-                    <li className={styles.headerItem}>
-                        <Link href="/contact">Resume</Link>
-                    </li>
-                    <li className={styles.headerItem}>
-                        <Link href="/contact">Projects</Link>
-                    </li>
-                    <li className={styles.headerItem}>
-                        <Link href="/contact">Contacts</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    );
+export default function Header() {
+  const [active, setActive] = useState('about');
+
+  const scrollToSection = (id: string) => {
+    setActive(id);
+
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let closestSection = '';
+      let minDistance = Infinity;
+
+      sections.forEach((section) => {
+        const el = document.getElementById(section.id);
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        const distance = Math.abs(rect.top - window.innerHeight / 2);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestSection = section.id;
+        }
+      });
+
+      if (closestSection) {
+        setActive(closestSection);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <motion.header 
+      className={styles.header}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+    >
+      <nav className={styles.container}>
+        <div className={styles.logoGroup}>
+          <h2 className={styles.name}>Anahit Gevorgyan</h2>
+          <span className={styles.divider}>/</span>
+          <p className={styles.role}>Software Engineer</p>
+        </div>
+
+        <ul className={styles.nav}>
+          {sections.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(item.id)}
+                className={`${styles.link} ${active === item.id ? styles.active : ''}`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </motion.header>
+  );
 }

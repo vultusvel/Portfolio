@@ -1,26 +1,111 @@
+@import "../../app/styles/variables.scss";
+
 .header {
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: $bg-blur;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-
-    .headerContainer {
+    .container {
+        max-width: $container-max;
+        margin: 0 auto;
+        padding: 15px 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
-    
-    
-        .headerMeInfo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        @media (max-width: $tablet) {
+            padding: 15px 20px;
+            flex-direction: column;
             gap: 10px;
         }
-    
-        .headerList {
+    }
+
+    .logoGroup {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .name {
+            font-size: 18px;
+            font-weight: 700;
             display: flex;
-            flex-direction: row;
             align-items: center;
             gap: 10px;
+
+            &::before {
+                content: "";
+                width: 12px;
+                height: 12px;
+                background: $primary;
+                transition: transform 0.4s ease;
+            }
+        }
+
+        &:hover .name::before {
+            transform: rotate(90deg);
+        }
+
+        .divider {
+            color: #ccc;
+        }
+
+        .role {
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: $mobile) {
+
+            .role,
+            .divider {
+                display: none;
+            }
+        }
+    }
+
+    .nav {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+
+        .link {
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: $text-main;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $primary;
+                transition: width 0.3s ease;
+            }
+
+            &:hover,
+            &.active {
+                color: $primary;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width: $tablet) {
+            gap: 20px;
         }
     }
 }
