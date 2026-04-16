@@ -4,10 +4,9 @@ import { motion } from 'framer-motion';
 import styles from './Certificates.module.scss';
 
 const certificates = [
-  { title: 'AWS Solutions Architect', desc: 'Cloud architecture fundamentals', link: '/AWS.png' },
-  { title: 'AI Fundamentals', desc: 'Machine learning basics', link: '/AWS.png' },
-  { title: 'Frontend Advanced', desc: 'Deep dive into React ecosystem', link: '/AWS.png' },
-  { title: 'System Design', desc: 'Scalable architecture principles', link: '/AWS.png' },
+  { title: 'AWS Solutions Architect', desc: 'Design and deployment of scalable, highly available, and fault-tolerant systems on AWS.', link: 'https://www.credly.com/badges/5e850e1e-4aac-4b60-8db1-47470f88a66e/public_url' },
+  { title: 'Generative AI Fundamentals', desc: 'Understanding LLMs, neural network principles, and the ethical implications of generative AI.', link: '/AIFundametals.png' },
+  { title: 'GCP - Cloud Digital Leader', desc: 'Strategic cloud adoption and utilizing Google Cloud services for business transformation and operational efficiency.', link: 'https://www.credly.com/badges/37ba501d-cb4a-48b2-9e75-a25d16d566fd/public_url' },
 ];
 
 export default function Certificates() {
@@ -40,12 +39,13 @@ export default function Certificates() {
           >
             <h3 className={styles.cardTitle}>{cert.title}</h3>
             <p className={styles.cardDesc}>{cert.desc}</p>
-            <a 
+            <a
               href={cert.link}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.viewLink}
             >
-              Download Certificate ↓
+              Link to certificate ↓
             </a>
           </motion.div>
         ))}

@@ -1,11 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
     const socialLinks = [
-      { id: 1, title: 'Email', icon: '/logos/Gmail_icon_(2020).svg.png', link: 'mailto:kdkfdk@gmail.com', text: 'kdkfdk@gmail.com' },
-      { id: 2, title: 'Github', icon: '/logos/GitHub-Logo.wine.svg', link: 'https://github.com', text: 'github.com' },
-      { id: 3, title: 'LinkedIn', icon: '/logos/LinkedIn_icon.svg.webp', link: 'https://linkedin.com', text: 'linkedin.com' },
+      { id: 1, title: 'annagevorgyan628@gmail.com', icon: '/logos/gm.png' },
+      { id: 2, title: 'Github', icon: '/logos/github.png', link: 'https://github.com/vultusvel?tab=repositories' },
+      { id: 3, title: 'LinkedIn', icon: '/logos/ln.png', link: 'https://www.linkedin.com/in/anahit-gevorgyan-2b3604287/' },
     ];
   
     return (
@@ -14,12 +16,22 @@ export default function Footer() {
           <ul className={styles.socialList}>
             {socialLinks.map((item) => (
               <li key={item.id} className={styles.socialItem}>
-                <div className={styles.labelStack}>
-                  <span className={styles.label}>{item.title}</span>
-                  <Image src={item.icon} alt={item.title} width={24} height={24} className={styles.icon} />
-                </div>
-                <a href={item.link} target="_blank" className={styles.link}>
-                  {item.text}
+                <a 
+                  href={item.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.mainLink}
+                >
+                  <div className={styles.labelStack}>
+                    <span className={styles.label}>{item.title}</span>
+                    <Image 
+                      src={item.icon} 
+                      alt={item.title} 
+                      width={24} 
+                      height={24} 
+                      className={styles.icon} 
+                    />
+                  </div>
                 </a>
               </li>
             ))}
@@ -27,4 +39,4 @@ export default function Footer() {
         </div>
       </footer>
     );
-  }
+}

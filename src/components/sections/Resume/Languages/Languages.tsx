@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import styles from './Languages.module.scss';
 
-const langs = ['English', 'Russian', 'Armenian', 'Ukrainian'];
+const langs = ['English', 'Russian', 'Armenian', 'Ukrainian', 'Polish'];
 
 export default function Languages() {
   return (

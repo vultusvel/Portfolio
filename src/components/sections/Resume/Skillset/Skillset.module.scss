@@ -87,22 +87,21 @@
 }
 
 .front {
-  background: white;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff80;
+  box-shadow: 0 10px 25px rgba(121, 115, 115, 0.22);
 
   .skillName {
     margin-top: 20px;
     font-size: 16px;
-    color: $text-main;
   }
 }
 
 .back {
   transform: rotateY(180deg);
-  background: $primary;
-  color: white;
+  box-shadow: 0 10px 25px rgba(121, 115, 115, 0.22);
+  background: rgb(223, 214, 200);
+  font-weight: 500;
   text-align: center;
-  font-size: 14px;
 }
 
 .arrowBtn {
@@ -122,5 +121,30 @@
 
   @media (max-width: $tablet) {
     display: none;
+  }
+}
+
+.progressContainer {
+  width: 100%;
+  max-width: 600px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 40px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressBar {
+  height: 100%;
+  background: $primary;
+  transform-origin: 0%;
+  width: 100%;
+}
+
+@media (max-width: $tablet) {
+  .progressContainer {
+    max-width: 200px;
+    margin-top: 20px;
   }
 }

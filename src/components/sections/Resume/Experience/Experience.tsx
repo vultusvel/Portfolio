@@ -2,21 +2,7 @@
 
 import { motion } from 'framer-motion';
 import styles from './Experience.module.scss';
-
-const experiences = [
-    {
-        title: 'Present',
-        side: 'left',
-        description: 'Frontend Engineer working on global product...',
-        responsibilities: ['API integration', 'Code reviews', 'Testing', 'Agile'],
-    },
-    {
-        title: 'Internship',
-        side: 'right',
-        description: 'Worked on real-world projects',
-        responsibilities: ['Bug fixing', 'UI', 'Learning'],
-    },
-];
+import { experiences } from './constants';
 
 export default function Experience() {
     return (
@@ -56,14 +42,62 @@ export default function Experience() {
                             <span className={styles.timeTag}>{exp.title}</span>
                             <p className={styles.description}>{exp.description}</p>
 
-                            <h4 className={styles.subTitle}>Responsibilities</h4>
-                            <div className={styles.responsibilities}>
-                                {exp.responsibilities.map((item, idx) => (
-                                    <div key={idx} className={styles.respItem}>
-                                        {item}
+                            {exp.contributions && exp.contributions.length > 0 && (
+                                <>
+                                    <h4 className={styles.subTitle}>Key Contributions</h4>
+                                    <div className={styles.responsibilities}>
+                                        {exp.contributions.map((item, idx) => (
+                                            <motion.div
+                                                key={idx}
+                                                className={styles.respItem}
+                                                initial={{ opacity: 0, scale: 0.8 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: idx * 0.1 }}
+                                            >
+                                                {item}
+                                            </motion.div>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
+                                </>
+                            )}
+
+                            {exp.responsibilities && exp.responsibilities.length > 0 && (
+                                <>
+                                    <h4 className={styles.subTitle}>Responsibilities</h4>
+                                    <div className={styles.responsibilities}>
+                                        {exp.responsibilities.map((item, idx) => (
+                                            <motion.div
+                                                key={idx}
+                                                className={styles.respItem}
+                                                initial={{ opacity: 0, y: 10 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: idx * 0.05 }}
+                                            >
+                                                {item}
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
+                            )}
+
+                            {exp.technologies && exp.technologies.length > 0 && (
+                                <>
+                                    <h4 className={styles.subTitle}>Technologies</h4>
+                                    <div className={styles.responsibilities}>
+                                        {exp.technologies.map((item, idx) => (
+                                            <motion.div
+                                                key={idx}
+                                                className={styles.techItem}
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
+                                                transition={{ delay: idx * 0.03 }}
+                                            >
+                                                {item}
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
+                            )}
                         </motion.div>
                     </div>
                 ))}

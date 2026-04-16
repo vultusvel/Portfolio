@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     gap: 40px;
 
-    padding: 100px 20px; 
+    padding: 60px 20px; 
     min-height: 100vh;
     margin: 0 auto;
     overflow: hidden;
@@ -39,7 +39,7 @@
 
         width: 100%;
         max-width: 400px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 
         .aboutImage {
@@ -82,7 +82,7 @@
         display: flex;
         flex-direction: column;
         max-width: 400px;
-        gap: 70px;
+        gap: 35px;
 
         @media (max-width: $tablet) {
             align-items: center;

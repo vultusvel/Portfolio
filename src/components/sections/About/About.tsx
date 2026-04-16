@@ -26,7 +26,7 @@ export default function About() {
         viewport={{ once: false, amount: 0.3 }}
       >
         <MotionImage 
-          src="/profile.jpg" 
+          src="/profile2.jpg" 
           alt="Profile"
           className={styles.aboutImage}
           width={200} 
@@ -48,7 +48,7 @@ export default function About() {
         <motion.h1 variants={itemVariants} className={styles.aboutTitle}>Hello</motion.h1>
         <motion.h2 variants={itemVariants}>Here&apos;s who I am & what I do</motion.h2>
         <motion.p variants={itemVariants} className={styles.aboutText}>
-          I&apos;m a software engineer with a passion for building web applications.
+        Continuously learning and highly motivated frontend engineer with solid experience in building scalable web applications. Experienced in integrating third-party services, designing efficient state management solutions, and optimizing performance in production environments. Comfortable working across the full development lifecycle - from implementing UI components to collaborating on backend integrations. Focused on writing maintainable, high-quality code and continuously improving development processes.
         </motion.p>
       </motion.div>
     </main>
