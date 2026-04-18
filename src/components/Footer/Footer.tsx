@@ -5,8 +5,8 @@ import styles from './Footer.module.scss';
 
 export default function Footer() {
     const socialLinks = [
-      { id: 1, title: 'annagevorgyan628@gmail.com', icon: '/logos/gm.png' },
-      { id: 2, title: 'Github', icon: '/logos/github.png', link: 'https://github.com/vultusvel?tab=repositories' },
+      { id: 1, title: 'Github', icon: '/logos/github.png', link: 'https://github.com/vultusvel?tab=repositories' },
+      { id: 2, title: 'annagevorgyan628@gmail.com', icon: '/logos/gm.png' },
       { id: 3, title: 'LinkedIn', icon: '/logos/ln.png', link: 'https://www.linkedin.com/in/anahit-gevorgyan-2b3604287/' },
     ];
   
@@ -28,7 +28,7 @@ export default function Footer() {
                       src={item.icon} 
                       alt={item.title} 
                       width={24} 
-                      height={24} 
+                      height={22} 
                       className={styles.icon} 
                     />
                   </div>
