@@ -10,7 +10,7 @@ export default function Experience() {
             <div className={styles.containerTitle}>
                 <h2 className={styles.title}>Experience</h2>
                 <a
-                    href="/Resume.pdf"
+                    href="/MyResume.pdf"
                     download="Anahit_Gevorgyan_CV.pdf"
                     className={styles.downloadButton}
                 >

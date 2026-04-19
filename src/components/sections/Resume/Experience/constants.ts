@@ -1,8 +1,8 @@
 export const experiences = [
     {
-        title: 'Grid Dynamics - Middle Frontend Engineer - 2024-2026',
+        title: 'Grid Dynamics - Frontend Engineer - 2024-2026',
         side: 'left',
-        description: 'Worked on an order management system for a global sportswear company, focused on optimizing operational workflows and improving internal tooling efficiency. Contributed across the full development lifecycle with a focus on performance, scalability, and reliability.',
+        description: 'Worked on an order management system for a global sportswear company, focused on optimizing operational workflows and improving internal tooling efficiency. Contributed across the full development lifecycle with a focus on performance, scalability, and reliability.Improved application performance leading to better user experience and positive client feedback',
 
         contributions: [
             'Reduced LCP from 8s to 3.5s and FCP from 4s to 2.8s via code splitting & lazy loading',
@@ -26,7 +26,7 @@ export const experiences = [
     },
 
     {
-        title: 'Grid Dynamics - Junior Frontend Engineer - 2024',
+        title: 'Grid Dynamics - Frontend Engineer - 2024',
         side: 'right',
         description: 'Contributed to the modernization of supply chain and e-commerce systems for a major US retailer, focusing on improving application reliability and maintainability.',
 
