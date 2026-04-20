@@ -26,24 +26,28 @@ export const experiences = [
     },
 
     {
-        title: 'Grid Dynamics - Frontend Engineer - 2024',
+        title: 'Grid Dynamics - Frontend Engineer - 2023-2024',
         side: 'right',
-        description: 'Contributed to the modernization of supply chain and e-commerce systems for a major US retailer, focusing on improving application reliability and maintainability.',
+        description: 'Contributed to the modernization of supply chain and e-commerce systems for a major US retailer, focusing on building scalable and maintainable frontend solutions.',
 
         contributions: [
-            'Achieved high test coverage for developed features',
-            'Set up CI/CD and automated deployment'
+            'Designed and developed a complex e-commerce application from scratch using React and TypeScript, taking ownership of the full development lifecycle from architecture design to production deployment.',
+            'Built a reusable internal UI library using Storybook and scalable styling approaches, ensuring consistency across multiple application modules',
+            'Established high engineering standards by implementing comprehensive unit testing with Jest, achieving up to 100% test coverage for critical modules.',
+            'Improved application structure and maintainability through modular component design and optimized state management patterns. Optimized rendering performance and reduced unnecessary re-renders',
         ],
 
         responsibilities: [
-            'Developed and maintained frontend features using React and TypeScript',
-            'Ensured high test coverage (up to 100% for owned modules)',
-            'Participated in code reviews and Agile processes',
-            'Integrated APIs and supported application lifecycle',
+            'Developed and maintained scalable frontend features using React, TypeScript, and Next.js',
+            'Implemented reusable, well-structured components aligned with modern React patterns',
+            'Managed application state using Redux, ensuring predictable data flow',
+            'Integrated RESTful APIs and handled complex asynchronous data flows',
+            'Collaborated in Agile environment, participating in code reviews, planning, and demos',
+            'Ensured high code quality through testing, linting, and best practices'
         ],
 
         technologies: [
-            'React', 'TypeScript', 'Redux', 'Materual UI',
+            'React', 'TypeScript', 'Next.js', 'Redux', 'Materual UI',
             'Jenkins', 'Jest', 'GCP'
         ]
     },
