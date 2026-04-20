@@ -1,0 +1,193 @@
+@import "../../../app/styles/variables.scss";
+
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mainTitle {
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.sliderWrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #eee;
+
+    .scrollContainer {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .imageItem {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+        scroll-snap-align: center;
+
+        .image {
+            object-fit: cover;
+        }
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+
+    &:hover {
+        background: white;
+        color: $primary;
+    }
+
+    &.left {
+        left: 10px;
+    }
+
+    &.right {
+        right: 10px;
+    }
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.progressContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+.progressBar {
+    height: 100%;
+    background: $primary;
+    width: 100%;
+    transform-origin: 0%;
+}
+
+.content {
+    padding: 30px;
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .githubLink {
+        color: $primary;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+}
+
+.seeMoreWrapper {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .seeMoreLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+  
+    .arrow {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: $primary;
+      transition: width 0.3s ease;
+    }
+  
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+  
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  
+  @media (max-width: $mobile) {
+    .seeMoreWrapper {
+      margin-top: 40px;
+    }
+    .seeMoreLink {
+      font-size: 14px;
+    }
+  }
+  

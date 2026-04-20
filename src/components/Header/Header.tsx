@@ -7,6 +7,7 @@ import styles from './Header.module.scss';
 const sections = [
   { id: 'about', label: 'About me' },
   { id: 'resume', label: 'Resume' },
+  { id: 'projects', label: 'Projects' },
   { id: 'contacts', label: 'Contacts' },
 ];
 

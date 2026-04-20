@@ -64,7 +64,7 @@ export const experiences = [
         ],
 
         technologies: [
-            'React', 'TypeScript', 'Redux', 'Firestore', 'Firebase'
+            'React', 'TypeScript', 'Redux', 'Firestore', 'Firebase', 'React Leaflet'
         ]
     },
 ];
